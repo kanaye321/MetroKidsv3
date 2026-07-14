@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/expo/eas-cli/main/packages/eas-cli/schema/eas.schema.json",
+  "cli": {
+    "version": ">= 16.0.0",
+    "requireCommit": false
+  },
+  "build": {
+    "base": {
+      "node": "22.14.0"
+    },
+
+    "development": {
+      "extends": "base",
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "https://metro-east-rider.onrender.com",
+        "EXPO_PUBLIC_GOOGLE_MAPS_KEY": "AIzaSyA9_H08nbbOKcXAHkni2RjprTX-VPPNYmQ"
+      },
+      "ios": {
+        "simulator": false
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+
+    "preview": {
+      "extends": "base",
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "https://metro-east-rider.onrender.com",
+        "EXPO_PUBLIC_GOOGLE_MAPS_KEY": "AIzaSyA9_H08nbbOKcXAHkni2RjprTX-VPPNYmQ"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+
+    "production": {
+      "extends": "base",
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "https://metro-east-rider.onrender.com",
+        "EXPO_PUBLIC_GOOGLE_MAPS_KEY": "AIzaSyA9_H08nbbOKcXAHkni2RjprTX-VPPNYmQ"
+      },
+      "ios": {
+        "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "app-bundle"
+      }
+    }
+  },
+
+  "submit": {
+    "production": {
+      "ios": {
+        "appleTeamId": "YOUR_APPLE_TEAM_ID",
+        "ascAppId": "YOUR_APP_STORE_CONNECT_APP_ID"
+      },
+      "android": {
+        "serviceAccountKeyPath": "./google-play-service-account.json",
+        "track": "internal"
+      }
+    }
+  }
+}
